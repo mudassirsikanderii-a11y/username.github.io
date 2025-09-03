@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fortified Life - Secure Your Data, Grow Your Wealth, Live Your Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Brand Colors and Fonts */
+        :root {
+            --color-primary: #1a365d; /* Deep Blue (Security) */
+            --color-secondary: #2d5a27; /* Forest Green (Wealth) */
+            --color-accent: #d69e2e;   /* Gold (Happiness) */
+            --color-light: #f7fafc;
+            --color-dark: #2d3748;
+            --font-heading: 'Poppins', 'Segoe UI', sans-serif;
+            --font-body: 'Lato', 'Segoe UI', sans-serif;
+        }
+
+        /* Import Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Lato:wght@400;700&display=swap');
+
+        /* General Styles */
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-dark);
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+        }
+        .container { width: 85%; max-width: 1200px; margin: 0 auto; padding: 40px 0; }
+        h1, h2, h3 { font-family: var(--font-heading); color: var(--color-primary); }
+
+        /* Header with Logo - FIXED */
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            height: 60px; /* Increased height */
+            width: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 80px 20px 100px;
+        }
+        .hero h1 { font-size: 2.8em; margin-bottom: 20px; }
+        .hero p { font-size: 1.3em; margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .btn {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { background-color: #b7821d; }
+
+        /* Three Pillars Section */
+        .pillars { text-align: center; background-color: var(--color-light); padding: 80px 20px; }
+        .pillars h2 { font-size: 2.2em; margin-bottom: 50px; }
+        .pillar-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .pillar { flex: 1; min-width: 250px; max-width: 350px; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .pillar i { font-size: 2.5em; color: var(--color-primary); margin-bottom: 20px; }
+        .pillar h3 { color: var(--color-secondary); margin-bottom: 15px; }
+
+        /* Sign-Up Section */
+        .signup { text-align: center; padding: 80px 20px; }
+        .signup h2 { margin-bottom: 20px; }
+        .signup-form { max-width: 500px; margin: 40px auto; }
+
+        /* MailerLite Pop-in Form Styling */
+        .ml-form-embedBody { background-color: #fff !important; border-radius: 10px !important; }
+        .ml-form-embedBodyHorizontal { padding: 20px !important; }
+        .ml-form-embedContent { color: var(--color-dark) !important; }
+        .ml-form-formContent { margin-bottom: 15px !important; }
+        .ml-form-formContent input {
+            width: 100% !important;
+            padding: 15px !important;
+            margin-bottom: 15px !important;
+            border: 1px solid #ddd !important;
+            border-radius: 5px !important;
+            font-size: 1em !important;
+            box-sizing: border-box !important;
+            font-family: var(--font-body) !important;
+        }
+        .ml-form-embedSubmit {
+            display: flex !important;
+            justify-content: center !important;
+        }
+        .ml-form-embedSubmit button {
+            background-color: var(--color-accent) !important;
+            color: white !important;
+            padding: 15px 35px !important;
+            border-radius: 5px !important;
+            font-weight: bold !important;
+            font-size: 1.1em !important;
+            border: none !important;
+            cursor: pointer !important;
+            transition: background-color 0.3s !important;
+            font-family: var(--font-body) !important;
+        }
+        .ml-form-embedSubmit button:hover {
+            background-color: #b7821d !important;
+        }
+        .privacy { font-size: 0.9em; color: #718096; margin-top: 20px; }
+
+        /* Footer - FIXED */
+        footer { 
+            background-color: var(--color-dark); 
+            color: white; 
+            text-align: center; 
+            padding: 40px 20px; /* Increased padding */
+            font-size: 0.9em; 
+        }
+        .footer-logo { 
+            height: 50px; /* Increased size */
+            width: auto; 
+            margin-bottom: 20px;
+            /* REMOVED the filter that makes it white */
+        }
+        .footer-content {
+            margin-top: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2em; }
+            .hero p { font-size: 1.1em; }
+            .pillar-container { flex-direction: column; }
+            .logo { height: 50px; } /* Adjusted for mobile */
+            .footer-logo { height: 40px; } /* Adjusted for mobile */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo - FIXED -->
+    <header class="header">
+        <div class="header-container">
+            <img src="https://i.ibb.co/DfWDsW9L/The-Fortified-Life-Logo-Transparent-png.png" alt="The Fortified Life Logo" class="logo">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Build Your Resilient Future.</h1>
+            <p>Actionable guides to secure your data, grow your wealth, and live a happier life.</p>
+            <!-- The MailerLite Trigger Button -->
+            <button class="btn ml-onclick-form" onclick="ml('show', 'lBbqvJ', true)">
+                Get Your Free Starter Pack <i class="fas fa-arrow-down"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Three Pillars Section -->
+    <section class="pillars">
+        <div class="container">
+            <h2>The Three Pillars of a Fortified Life</h2>
+            <div class="pillar-container">
+                <div class="pillar">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Digital Security</h3>
+                    <p>Practical privacy and security tips to protect your data from hackers and trackers.</p>
+                </div>
+                <div class="pillar">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Financial Freedom</h3>
+                    <p>Simple, jargon-free strategies for budgeting, investing, and building lasting wealth.</p>
+                </div>
+                <div class="pillar">
+                    <i class="fas fa-heart"></i>
+                    <h3>Personal Happiness</h3>
+                    <p>Science-backed habits for mental resilience, mindfulness, and a purposeful life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign-Up Section -->
+    <section id="signup" class="signup">
+        <div class="container">
+            <h2>Start Your Journey Today - For Free.</h2>
+            <p>Join our community and get the <strong>'Fortified Life Starter Pack'</strong> delivered directly to your inbox. This free guide includes:</p>
+            <ul>
+                <li>The Password Security Checklist</li>
+                <li>The Simple Budgeting Template</li>
+                <li>The 7-Day Mindfulness Challenge</li>
+            </ul>
+            <!-- Another MailerLite Trigger Button -->
+            <div class="signup-form">
+                <button class="btn ml-onclick-form" onclick="ml('show', 'lBbqvJ', true)" style="width: 100%;">
+                    Subscribe Now
+                </button>
+            </div>
+            <p class="privacy">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- Footer - FIXED -->
+    <footer>
+        <div class="container">
+            <img src="https://i.ibb.co/DfWDsW9L/The-Fortified-Life-Logo-Transparent-png.png" alt="The Fortified Life Logo" class="footer-logo">
+            <div class="footer-content">
+                <p>© 2024 The Fortified Life. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1773493');
+    </script>
+    <!-- End MailerLite Universal -->
+</body>
+</html>
